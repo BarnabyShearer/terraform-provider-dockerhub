@@ -23,6 +23,7 @@ func resourceToken() *schema.Resource {
 			"label": {
 				Type:        schema.TypeString,
 				Required:    true,
+				ForceNew:    true,
 				Description: "Token label.",
 			},
 			"token": {
@@ -32,8 +33,10 @@ func resourceToken() *schema.Resource {
 				Description: "Token to use as password",
 			},
 			"scopes": {
-				Type:     schema.TypeList,
-				Required: true,
+				Type:        schema.TypeList,
+				Required:    true,
+				ForceNew:    true,
+				Description: "Permissions e.g. 'repo:admin'",
 			},
 		},
 	}
