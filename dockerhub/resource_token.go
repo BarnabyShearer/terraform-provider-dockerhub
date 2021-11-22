@@ -13,6 +13,7 @@ func resourceToken() *schema.Resource {
 	return &schema.Resource{
 		Description:   "A hub.docker.io personal access token (for uploading images).",
 		CreateContext: resourceTokenCreate,
+		ReadContext:   noop,
 		DeleteContext: resourceTokenDelete,
 		Schema: map[string]*schema.Schema{
 			"id": {
@@ -53,6 +54,10 @@ func resourceTokenCreate(ctx context.Context, d *schema.ResourceData, m interfac
 	}
 	d.SetId(token.UUID)
 	d.Set("token", token.Token)
+	return nil
+}
+
+func noop(ctx context.Context, d *schema.ResourceData, m interface{}) diag.Diagnostics {
 	return nil
 }
 
