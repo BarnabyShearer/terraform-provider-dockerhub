@@ -61,6 +61,7 @@ func resourceRepository() *schema.Resource {
 
 func updateReqest(d *schema.ResourceData) dh.Repository {
 	return dh.Repository{
+		Namespace:       d.Get("namespace").(string),
 		Name:            d.Get("name").(string),
 		Description:     d.Get("description").(string),
 		FullDescription: d.Get("full_description").(string),
