@@ -34,10 +34,11 @@ func resourceToken() *schema.Resource {
 				Description: "Token to use as password",
 			},
 			"scopes": {
-				Type:        schema.TypeList,
+				Type:        schema.TypeSet,
 				Required:    true,
 				ForceNew:    true,
 				Description: "Permissions e.g. 'repo:admin'",
+				Elem:        schema.TypeString,
 			},
 		},
 	}
@@ -45,9 +46,14 @@ func resourceToken() *schema.Resource {
 
 func resourceTokenCreate(ctx context.Context, d *schema.ResourceData, m interface{}) diag.Diagnostics {
 	client := m.(*dh.Client)
+	scopesRaw := d.Get("scopes").(*schema.Set).List()
+	scopes := make([]string, len(scopesRaw))
+	for i, raw := range scopesRaw {
+		scopes[i] = raw.(string)
+	}
 	token, err := client.CreatePersonalAccessToken(ctx, dh.CreatePersonalAccessToken{
 		TokenLabel: d.Get("label").(string),
-		Scopes:     d.Get("scopes").([]string),
+		Scopes:     scopes,
 	})
 	if err != nil {
 		return diag.FromErr(err)
