@@ -2,3 +2,4 @@ terraform-provider-dockerhub
 .terraform.lock.hcl
 .terraform
 terraform.tfstate*
+
