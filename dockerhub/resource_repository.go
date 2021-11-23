@@ -12,7 +12,7 @@ import (
 
 func resourceRepository() *schema.Resource {
 	return &schema.Resource{
-		Description:   "A hub.docker.io repository.",
+		Description:   "A hub.docker.com repository.",
 		CreateContext: resourceRepositoryCreate,
 		UpdateContext: resourceRepositoryUpdate,
 		ReadContext:   resourceRepositoryRead,

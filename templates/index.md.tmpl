@@ -2,12 +2,12 @@
 layout: ""
 page_title: "Provider: dockerhub"
 description: |-
-  Register hub.docker.io repositories.
+  Register hub.docker.com repositories.
 ---
 
 # dockerhub Provider
 
-Register hub.docker.io repositories.
+Register hub.docker.com repositories.
 
 ## Example Usage
 

@@ -3,12 +3,12 @@
 page_title: "dockerhub_repository Resource - terraform-provider-dockerhub"
 subcategory: ""
 description: |-
-  A hub.docker.io repository.
+  A hub.docker.com repository.
 ---
 
 # dockerhub_repository (Resource)
 
-A hub.docker.io repository.
+A hub.docker.com repository.
 
 ## Example Usage
 

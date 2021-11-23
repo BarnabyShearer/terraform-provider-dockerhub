@@ -11,7 +11,7 @@ import (
 
 func resourceToken() *schema.Resource {
 	return &schema.Resource{
-		Description:   "A hub.docker.io personal access token (for uploading images).",
+		Description:   "A hub.docker.com personal access token (for uploading images).",
 		CreateContext: resourceTokenCreate,
 		ReadContext:   noop,
 		DeleteContext: resourceTokenDelete,
@@ -38,22 +38,27 @@ func resourceToken() *schema.Resource {
 				Required:    true,
 				ForceNew:    true,
 				Description: "Permissions e.g. 'repo:admin'",
-				Elem:        schema.TypeString,
+				Elem: &schema.Schema{
+					Type: schema.TypeString,
+				},
 			},
 		},
 	}
 }
 
+func readSetString(set *schema.Set) []string {
+	ret := make([]string, len(set.List()))
+	for i, raw := range set.List() {
+		ret[i] = raw.(string)
+	}
+	return ret
+}
+
 func resourceTokenCreate(ctx context.Context, d *schema.ResourceData, m interface{}) diag.Diagnostics {
 	client := m.(*dh.Client)
-	scopesRaw := d.Get("scopes").(*schema.Set).List()
-	scopes := make([]string, len(scopesRaw))
-	for i, raw := range scopesRaw {
-		scopes[i] = raw.(string)
-	}
 	token, err := client.CreatePersonalAccessToken(ctx, dh.CreatePersonalAccessToken{
 		TokenLabel: d.Get("label").(string),
-		Scopes:     scopes,
+		Scopes:     readSetString(d.Get("scopes").(*schema.Set)),
 	})
 	if err != nil {
 		return diag.FromErr(err)

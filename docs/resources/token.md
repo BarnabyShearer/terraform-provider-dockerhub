@@ -3,12 +3,12 @@
 page_title: "dockerhub_token Resource - terraform-provider-dockerhub"
 subcategory: ""
 description: |-
-  A hub.docker.io personal access token (for uploading images).
+  A hub.docker.com personal access token (for uploading images).
 ---
 
 # dockerhub_token (Resource)
 
-A hub.docker.io personal access token (for uploading images).
+A hub.docker.com personal access token (for uploading images).
 
 ## Example Usage
 
@@ -24,7 +24,7 @@ resource "dockerhub_token" "example" {
 ### Required
 
 - **label** (String) Token label.
-- **scopes** (List of String) Permissions e.g. 'repo:admin'
+- **scopes** (Set of String) Permissions e.g. 'repo:admin'
 
 ### Read-Only
 
