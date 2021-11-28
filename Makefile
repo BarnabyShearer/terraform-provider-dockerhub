@@ -1,4 +1,7 @@
-test: terraform-provider-dockerhub
+terraform-provider-dockerhub: *.go */*.go go.mod docs/index.md test
+	go build .
+
+test:
 	terraform fmt -recursive
 	go fmt ./...
 	go vet .
@@ -6,9 +9,6 @@ test: terraform-provider-dockerhub
 
 testacc: test
 	TF_ACC=1 go test ./...
-
-terraform-provider-dockerhub: *.go */*.go go.mod docs/index.md
-	go build .
 
 install: terraform-provider-dockerhub
 	mkdir -p ~/.terraform.d/plugins/registry.terraform.io/BarnabyShearer/dockerhub/0.1.0/linux_amd64
