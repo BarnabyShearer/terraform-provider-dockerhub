@@ -1,4 +1,4 @@
-test:
+test: terraform-provider-dockerhub
 	terraform fmt -recursive
 	go fmt ./...
 	go vet .
