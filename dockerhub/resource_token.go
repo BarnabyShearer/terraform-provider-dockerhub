@@ -6,7 +6,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 
-	dh "github.com/BarnabyShearer/dockerhub/v2"
+	dh "github.com/magenta-aps/dockerhub/v2"
 )
 
 func resourceToken() *schema.Resource {

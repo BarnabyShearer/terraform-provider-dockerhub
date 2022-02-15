@@ -11,7 +11,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/terraform"
 
-	dh "github.com/BarnabyShearer/dockerhub/v2"
+	dh "github.com/magenta-aps/dockerhub/v2"
 )
 
 func toGenericArray(old []string) []interface{} {

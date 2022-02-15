@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/resource"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/terraform"
 
-	dh "github.com/BarnabyShearer/dockerhub/v2"
+	dh "github.com/magenta-aps/dockerhub/v2"
 )
 
 func TestAccDockerhubRepository_basic(t *testing.T) {

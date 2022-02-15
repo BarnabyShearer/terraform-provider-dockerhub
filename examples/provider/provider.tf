@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     dockerhub = {
-      source = "BarnabyShearer/dockerhub"
+      source = "magenta-aps/dockerhub"
     }
   }
 }
