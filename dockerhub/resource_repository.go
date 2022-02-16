@@ -59,7 +59,7 @@ func resourceRepository() *schema.Resource {
 	}
 }
 
-func updateReqest(d *schema.ResourceData) dh.Repository {
+func updateRepositoryRequest(d *schema.ResourceData) dh.Repository {
 	return dh.Repository{
 		Namespace:       d.Get("namespace").(string),
 		Name:            d.Get("name").(string),
@@ -71,7 +71,7 @@ func updateReqest(d *schema.ResourceData) dh.Repository {
 
 func resourceRepositoryCreate(ctx context.Context, d *schema.ResourceData, m interface{}) diag.Diagnostics {
 	client := m.(*dh.Client)
-	repository, err := client.CreateRepository(ctx, updateReqest(d))
+	repository, err := client.CreateRepository(ctx, updateRepositoryRequest(d))
 	if err != nil {
 		return diag.FromErr(err)
 	}
@@ -93,7 +93,7 @@ func resourceRepositoryRead(ctx context.Context, d *schema.ResourceData, m inter
 
 func resourceRepositoryUpdate(ctx context.Context, d *schema.ResourceData, m interface{}) diag.Diagnostics {
 	client := m.(*dh.Client)
-	err := client.UpdateRepository(ctx, d.Id(), updateReqest(d))
+	err := client.UpdateRepository(ctx, d.Id(), updateRepositoryRequest(d))
 	if err != nil {
 		return diag.FromErr(err)
 	}
