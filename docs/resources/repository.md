@@ -3,12 +3,12 @@
 page_title: "dockerhub_repository Resource - terraform-provider-dockerhub"
 subcategory: ""
 description: |-
-  A hub.docker.com repository.
+  Manages an image repository
 ---
 
 # dockerhub_repository (Resource)
 
-A hub.docker.com repository.
+Manages an image repository
 
 ## Example Usage
 
@@ -26,18 +26,18 @@ resource "dockerhub_repository" "example" {
 
 ### Required
 
-- **name** (String) Repository name.
-- **namespace** (String) Repository namespace.
+- `name` (String) Repository name.
+- `namespace` (String) Repository namespace.
 
 ### Optional
 
-- **description** (String) Repository description.
-- **full_description** (String) Repository full description.
-- **private** (Boolean) Is the repository private.
+- `description` (String) Repository description.
+- `full_description` (String) Repository full description.
+- `private` (Boolean) Is the repository private.
 
 ### Read-Only
 
-- **id** (String) The namespace/name of the repository.
+- `id` (String) The namespace/name of the repository.
 
 ## Import
 

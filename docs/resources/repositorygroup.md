@@ -3,12 +3,12 @@
 page_title: "dockerhub_repositorygroup Resource - terraform-provider-dockerhub"
 subcategory: ""
 description: |-
-  A hub.docker.com repository group association.
+  Manages an organization group / repository permission binding
 ---
 
 # dockerhub_repositorygroup (Resource)
 
-A hub.docker.com repository group association.
+Manages an organization group / repository permission binding
 
 
 
@@ -17,13 +17,16 @@ A hub.docker.com repository group association.
 
 ### Required
 
-- **group** (Number) The group to add.
-- **groupname** (String) The group to add.
-- **repository** (String) The repository path.
+- `group` (Number) The group to add.
+- `groupname` (String) The group to add.
+- `repository` (String) The repository path.
 
 ### Optional
 
-- **id** (String) The ID of this resource.
-- **permission** (String) The permission to assign the group. One of 'read', 'write' and 'admin'.
+- `permission` (String) The permission to assign the group. One of 'read', 'write' and 'admin'.
+
+### Read-Only
+
+- `id` (String) The ID of this resource.
 
 
