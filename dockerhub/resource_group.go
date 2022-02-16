@@ -22,6 +22,11 @@ func resourceGroup() *schema.Resource {
 			State: schema.ImportStatePassthrough,
 		},
 		Schema: map[string]*schema.Schema{
+			"id": {
+				Description: "The provider specific id of the group.",
+				Type:        schema.TypeString,
+				Computed:    true,
+			},
 			"organisation": {
 				Type:        schema.TypeString,
 				Required:    true,

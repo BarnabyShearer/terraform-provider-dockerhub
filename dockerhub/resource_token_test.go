@@ -58,22 +58,22 @@ func TestAccDockerhubToken_basic(t *testing.T) {
 		Steps: []resource.TestStep{
 			{
 				Config: `
-					resource "dockerhub_token" "foo" {
-						label = "foo"
-						scopes = ["repo:admin"]
-					}
-					`,
+                    resource "dockerhub_token" "foo" {
+                        label = "foo"
+                        scopes = ["repo:admin"]
+                    }
+                    `,
 				Check: resource.ComposeTestCheckFunc(
 					resource.TestCheckResourceAttr("dockerhub_token.foo", "label", "foo"),
 				),
 			},
 			{
 				Config: `
-					resource "dockerhub_token" "foo" {
-						label = "bar"
-						scopes = ["repo:admin"]
-					}
-					`,
+                    resource "dockerhub_token" "foo" {
+                        label = "bar"
+                        scopes = ["repo:admin"]
+                    }
+                    `,
 				Check: resource.ComposeTestCheckFunc(
 					resource.TestCheckResourceAttr("dockerhub_token.foo", "label", "bar"),
 				),
