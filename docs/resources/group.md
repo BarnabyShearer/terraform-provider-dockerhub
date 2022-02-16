@@ -35,7 +35,7 @@ resource "dockerhub_group" "example" {
 ### Read-Only
 
 - `group_id` (Number) Group ID.
-- `id` (String) The ID of this resource.
+- `id` (String) The provider specific id of the group.
 
 ## Import
 
