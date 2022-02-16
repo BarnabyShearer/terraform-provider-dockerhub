@@ -14,6 +14,8 @@ This provider enables management of Docker Hub registries, groups, permissions a
 
 ## Installation
 
+The provider can be installed and managed automatically by Terraform. Sample `versions.tf` file:
+
 ```terraform
 terraform {
   required_version = ">= 0.13"
@@ -21,7 +23,7 @@ terraform {
   required_providers {
     kubectl = {
       source  = "magenta-aps/dockerhub"
-      version = ">= 0.0.11"
+      version = ">= 0.0.12"
     }
   }
 }
