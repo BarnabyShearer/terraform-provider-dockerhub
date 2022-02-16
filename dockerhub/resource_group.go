@@ -13,7 +13,7 @@ import (
 
 func resourceGroup() *schema.Resource {
 	return &schema.Resource{
-		Description:   "A hub.docker.com organization group.",
+		Description:   "Manages an organization group",
 		CreateContext: resourceGroupCreate,
 		UpdateContext: resourceGroupUpdate,
 		ReadContext:   resourceGroupRead,
@@ -41,7 +41,7 @@ func resourceGroup() *schema.Resource {
 			"group_id": {
 				Type:        schema.TypeInt,
 				Computed:    true,
-				Description: "wow",
+				Description: "Group ID.",
 			},
 		},
 	}

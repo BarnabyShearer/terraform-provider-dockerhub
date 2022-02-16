@@ -3,12 +3,12 @@
 page_title: "dockerhub_token Resource - terraform-provider-dockerhub"
 subcategory: ""
 description: |-
-  A hub.docker.com personal access token (for uploading images).
+  Manages a personal access token (for uploading repository images)
 ---
 
 # dockerhub_token (Resource)
 
-A hub.docker.com personal access token (for uploading images).
+Manages a personal access token (for uploading repository images)
 
 ## Example Usage
 

@@ -3,12 +3,12 @@
 page_title: "dockerhub_repositorygroup Resource - terraform-provider-dockerhub"
 subcategory: ""
 description: |-
-  A hub.docker.com repository group association.
+  Manages an organization group / repository permission binding
 ---
 
 # dockerhub_repositorygroup (Resource)
 
-A hub.docker.com repository group association.
+Manages an organization group / repository permission binding
 
 
 

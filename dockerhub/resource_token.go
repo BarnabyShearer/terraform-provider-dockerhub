@@ -11,7 +11,7 @@ import (
 
 func resourceToken() *schema.Resource {
 	return &schema.Resource{
-		Description:   "A hub.docker.com personal access token (for uploading images).",
+		Description:   "Manages a personal access token (for uploading repository images)",
 		CreateContext: resourceTokenCreate,
 		ReadContext:   noop,
 		DeleteContext: resourceTokenDelete,
