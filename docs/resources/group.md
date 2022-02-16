@@ -31,11 +31,11 @@ resource "dockerhub_group" "example" {
 ### Optional
 
 - **description** (String) Group description.
-- **id** (String) The ID of this resource.
 
 ### Read-Only
 
 - **group_id** (Number) Group ID.
+- **id** (String) The provider specific id of the group.
 
 ## Import
 

@@ -22,6 +22,11 @@ func resourceRepositoryGroup() *schema.Resource {
 			State: schema.ImportStatePassthrough,
 		},
 		Schema: map[string]*schema.Schema{
+			"id": {
+				Description: "The provider specific id of the repository group.",
+				Type:        schema.TypeString,
+				Computed:    true,
+			},
 			"repository": {
 				Type:        schema.TypeString,
 				Required:    true,

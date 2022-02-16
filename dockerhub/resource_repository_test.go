@@ -20,24 +20,24 @@ func TestAccDockerhubRepository_basic(t *testing.T) {
 		Steps: []resource.TestStep{
 			{
 				Config: `
-					resource "dockerhub_repository" "foo" {
-						namespace = "barnabyshearer"
-						name = "foo"
-						description = "bar"
-					}
-					`,
+                    resource "dockerhub_repository" "foo" {
+                        namespace = "barnabyshearer"
+                        name = "foo"
+                        description = "bar"
+                    }
+                    `,
 				Check: resource.ComposeTestCheckFunc(
 					resource.TestCheckResourceAttr("dockerhub_repository.foo", "description", "bar"),
 				),
 			},
 			{
 				Config: `
-					resource "dockerhub_repository" "foo" {
-						namespace = "barnabyshearer"
-						name = "foo"
-						description = "baz"
-					}
-					`,
+                    resource "dockerhub_repository" "foo" {
+                        namespace = "barnabyshearer"
+                        name = "foo"
+                        description = "baz"
+                    }
+                    `,
 				Check: resource.ComposeTestCheckFunc(
 					resource.TestCheckResourceAttr("dockerhub_repository.foo", "description", "baz"),
 				),
