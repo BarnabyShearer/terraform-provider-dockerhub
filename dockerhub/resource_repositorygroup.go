@@ -13,7 +13,7 @@ import (
 
 func resourceRepositoryGroup() *schema.Resource {
 	return &schema.Resource{
-		Description:   "A hub.docker.com repository group association.",
+		Description:   "Manages an organization group / repository permission binding",
 		CreateContext: resourceRepositoryGroupCreate,
 		UpdateContext: resourceRepositoryGroupUpdate,
 		ReadContext:   resourceRepositoryGroupRead,

@@ -6,12 +6,25 @@ description: |-
   Register hub.docker.com repositories.
 ---
 
-# dockerhub Provider
+# Docker Hub Provider
 
-Register hub.docker.com repositories.
+Lifecycle management of Docker Hub using the v2 API.
 
-## Example Usage
+This provider enables management of Docker Hub registries, groups, permissions and access tokens.
 
-{{tffile "examples/provider/provider.tf"}}
+## Installation
 
-{{ .SchemaMarkdown | trimspace }}
+{{tffile "examples/provider/installation.tf"}}
+
+## Configuration
+
+{{tffile "examples/provider/configuration.tf"}}
+
+### Argument Reference
+
+- **password** (String) Password for authentication.
+- **username** (String) Username for authentication.
+
+## Example
+
+{{tffile "examples/full.tf"}}
