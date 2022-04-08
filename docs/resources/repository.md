@@ -30,8 +30,8 @@ resource "dockerhub_repository" "example" {
 
 ### Optional
 
-- **description** (String) Repository name.
-- **full_description** (String) Repository name.
+- **description** (String) Repository description.
+- **full_description** (String) Repository full description.
 - **private** (Boolean) Is the repository private.
 
 ### Read-Only
