@@ -40,13 +40,13 @@ func resourceRepository() *schema.Resource {
 				Type:        schema.TypeString,
 				Required:    false,
 				Optional:    true,
-				Description: "Repository name.",
+				Description: "Repository description.",
 			},
 			"full_description": {
 				Type:        schema.TypeString,
 				Required:    false,
 				Optional:    true,
-				Description: "Repository name.",
+				Description: "Repository full description.",
 			},
 			"private": {
 				Type:        schema.TypeBool,
