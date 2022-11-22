@@ -99,3 +99,7 @@ $ make install
 ```
 
 This installs the provider to `~/.terraform.d/`, removes `.terraform.lock.hcl` and runs `terraform init` in the local folder.
+
+## Thanks
+
+Organisation and Group support added by [Magenta ApS](https://github.com/magenta-aps).
