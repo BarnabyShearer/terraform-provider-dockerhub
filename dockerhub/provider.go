@@ -31,6 +31,9 @@ func Provider() *schema.Provider {
 			"dockerhub_repositorygroup": resourceRepositoryGroup(),
 			"dockerhub_token":           resourceToken(),
 		},
+		DataSourcesMap: map[string]*schema.Resource{
+			"dockerhub_group": dataSourceGroup(),
+		},
 		ConfigureContextFunc: providerConfigure,
 	}
 }
