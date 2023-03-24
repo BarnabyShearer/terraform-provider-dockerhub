@@ -52,7 +52,6 @@ func dataSourceGroupRead(ctx context.Context, d *schema.ResourceData, m interfac
 	if err != nil {
 		return diag.FromErr(err)
 	}
-	fmt.Println(group)
 	d.SetId(fmt.Sprintf("%s/%s", organisation, group.Name))
 	d.Set("description", group.Description)
 	d.Set("group_id", group.Id)

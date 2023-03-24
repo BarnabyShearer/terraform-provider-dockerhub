@@ -9,6 +9,7 @@ import (
 
 var testAccProviders map[string]*schema.Provider
 var testAccProvider *schema.Provider
+var organisation = os.Getenv("DOCKER_ORGANISATION")
 
 func init() {
 	testAccProvider = Provider()
@@ -23,5 +24,8 @@ func testAccPreCheck(t *testing.T) {
 	}
 	if v := os.Getenv("DOCKER_PASSWORD"); v == "" {
 		t.Fatal("DOCKER_PASSWORD must be set for acceptance tests")
+	}
+	if organisation == "" {
+		organisation = "barnabyshearer"
 	}
 }
